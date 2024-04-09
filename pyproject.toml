@@ -4,11 +4,33 @@ version = "0.9.4"
 description = "Pyspark test helper library"
 authors = ["MrPowers <matthewkevinpowers@gmail.com>"]
 license = "MIT"
+readme = "README.md"
+homepage = "https://github.com/MrPowers/chispa/"
+keywords = ['apachespark', 'spark', 'pyspark']
+
+
+###########################################################################
+#                         MAIN DEPENDENCIES
+###########################################################################
 
 [tool.poetry.dependencies]
 python = ">=3.7,<4.0"
 
-[tool.poetry.dev-dependencies]
+###########################################################################
+#                         DEPENDENCY GROUPS 
+###########################################################################
+
+[tool.poetry.group.development]
+optional = true
+
+[tool.poetry.group.testing]
+optional = true
+
+[tool.poetry.group.development.dependencies]
+pyspark = ">2.0.0"
+findspark = "1.4.2"
+
+[tool.poetry.group.testing.dependencies]
 pytest = "3.2.2"
 pytest_describe = "^1.0.0"
 pyspark = ">2.0.0"
